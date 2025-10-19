@@ -1,0 +1,111 @@
+<!-- gift.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20/10 Gift</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 1rem;
+      background: #fff0f3;
+      color: #c9184a;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .active-slide {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .gift-icon-wrapper {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .gift-icon {
+      width: 80px;
+      height: auto;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .gift-content {
+      padding: 2rem 1rem;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: #d6336c;
+      border: 2px dashed #d6336c;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .gift-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .gift-content p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .slide { height: 180px; }
+      .gift-icon { width: 60px; }
+      .gift-content h2 { font-size: 1.25rem; }
+      .gift-content p { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <img src="https://i.pinimg.com/originals/90/ee/7e/90ee7ee3312b4eacbd139d3eba7e46da.gif" class="slide active-slide" alt="Gift 1">
+    <img src="https://antimatter.vn/wp-content/uploads/2022/05/anh-gif-799x452.gif" class="slide" alt="Gift 2">
+    <img src="https://i.pinimg.com/originals/90/ee/7e/90ee7ee3312b4eacbd139d3eba7e46da.gif" class="slide" alt="Gift 3">
+  </div>
+
+  <div class="gift-content">
+    <div class="gift-icon-wrapper">
+      <img src="https://i.pinimg.com/originals/59/65/16/596516d3a93d974b39c76a387ebbab24.gif" alt="Gift animation" class="gift-icon">
+    </div>
+    
+    <h2>🌷 Chúc mừng ngày 20/10 💖</h2>
+    <p>
+      Chúc em luôn xinh đẹp, rạng rỡ như những bông hoa<br>
+      Ngày nào cũng vui tươi, hạnh phúc và ngọt ngào như hôm nay 🌸<br>
+      Cảm ơn vì đã là người tuyệt vời nhất trong cuộc đời này 💕
+    </p>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active-slide");
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].classList.add("active-slide");
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  </script>
+</body>
+</html>
