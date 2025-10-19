@@ -1,10 +1,9 @@
-<!-- gift.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>20/10 Gift</title>
+  <title>💌 Thư gửi Phan Hà Anh</title>
   <style>
     body {
       margin: 0;
@@ -14,6 +13,8 @@
       font-family: 'Poppins', sans-serif;
       text-align: center;
     }
+
+    /* Slideshow */
     .slideshow-container {
       position: relative;
       width: 100%;
@@ -35,43 +36,81 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    .gift-icon-wrapper {
-      text-align: center;
+
+    /* Phong bì thư */
+    .envelope {
+      position: relative;
+      background: #ffe0e9;
+      border: 2px dashed #d6336c;
+      border-radius: 12px;
+      padding: 2rem 1rem 3rem;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      box-shadow: 0 8px 15px rgba(214,51,108,0.2);
+      overflow: hidden;
+      animation: openLetter 1s ease;
+    }
+
+    @keyframes openLetter {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .paper {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      color: #d6336c;
+      font-family: "Dancing Script", cursive;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .paper h2 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
+
+    .heart {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      font-size: 1.5rem;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .gift-icon-wrapper {
+      margin: 1.2rem 0;
+    }
+
     .gift-icon {
       width: 80px;
       height: auto;
       animation: bounce 2s infinite;
     }
+
     @keyframes bounce {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    .gift-content {
-      padding: 2rem 1rem;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      color: #d6336c;
-      border: 2px dashed #d6336c;
-      border-radius: 12px;
-      background: #fff;
-    }
-    .gift-content h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .gift-content p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+
     @media (max-width: 600px) {
       .slide { height: 180px; }
+      .paper h2 { font-size: 1.3rem; }
+      .paper { font-size: 1.05rem; }
       .gift-icon { width: 60px; }
-      .gift-content h2 { font-size: 1.25rem; }
-      .gift-content p { font-size: 0.95rem; }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="slideshow-container">
@@ -80,17 +119,21 @@
     <img src="https://i.pinimg.com/originals/90/ee/7e/90ee7ee3312b4eacbd139d3eba7e46da.gif" class="slide" alt="Gift 3">
   </div>
 
-  <div class="gift-content">
-    <div class="gift-icon-wrapper">
-      <img src="https://i.pinimg.com/originals/59/65/16/596516d3a93d974b39c76a387ebbab24.gif" alt="Gift animation" class="gift-icon">
+  <div class="envelope">
+    <div class="heart">💌</div>
+    <div class="paper">
+      <h2>🌷 Gửi đến Phan Hà Anh 💖</h2>
+      <p>
+        Em là cô gái dịu dàng và đáng yêu nhất 💕<br>
+        Chúc em luôn xinh đẹp, tự tin và rạng rỡ như những đóa hoa trong nắng sớm 🌼<br>
+        Mỗi ngày của em đều ngọt ngào, an yên và tràn đầy tiếng cười như chính nụ cười của em 🌸<br>
+        Cảm ơn em – vì đã mang đến cho thế giới này một sắc hồng dịu dàng đến thế 💫
+      </p>
+
+      <div class="gift-icon-wrapper">
+        <img src="https://i.pinimg.com/originals/59/65/16/596516d3a93d974b39c76a387ebbab24.gif" alt="Gift animation" class="gift-icon">
+      </div>
     </div>
-    
-    <h2>🌷 Chúc mừng ngày 20/10 💖</h2>
-    <p>
-      Chúc em luôn xinh đẹp, rạng rỡ như những bông hoa<br>
-      Ngày nào cũng vui tươi, hạnh phúc và ngọt ngào như hôm nay 🌸<br>
-      Cảm ơn vì đã là người tuyệt vời nhất trong cuộc đời này 💕
-    </p>
   </div>
 
   <script>
@@ -103,7 +146,7 @@
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].classList.add("active-slide");
-      setTimeout(showSlides, 3000);
+      setTimeout(showSlides, 3500);
     }
     showSlides();
   </script>
